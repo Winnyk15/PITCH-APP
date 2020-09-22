@@ -4,7 +4,7 @@ class Config:
     '''
     General Configuration parent class
     '''
-    SECRET_KEY="SXFkm1kaBqur0Xy6goZc4NhFTEgK5BCx"
+    SECRET_KEY="OCHIBO"
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:7363@localhost/pitchapp'
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
     
