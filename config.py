@@ -4,9 +4,11 @@ class Config:
     '''
     General Configuration parent class
     '''
-    SECRET_KEY="OCHIBO"
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:7363@localhost/pitchapp'
+    SECRET_KEY = 'you-will-never-guess'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + db
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587

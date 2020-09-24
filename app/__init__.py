@@ -32,8 +32,12 @@ def create_app(config_name):
     
 
     #setting up configuration
-    app.config.from_object(config_options[config_name])
-    configure_uploads(app, photos)
+    if config_options is None:
+        app.config.from_object(config_options[config_name])
+        app.config.from_object(configure_uploads(app, photos))
+    else:
+        app.config.from_object(config_options)
+        db.init_app(app)
     
    
     
