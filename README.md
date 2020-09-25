@@ -33,7 +33,7 @@ Navigate into the folder you want the application to be
 In your terminal, run the commands
   > $ git clone https://github.com/Winnyk15/PITCH-APP.git
   > 
-  > $ cd PitchApp
+  > $ cd PITCH-APP
 
 ### Running the application
 * Modify the start.sh file with your own api key
