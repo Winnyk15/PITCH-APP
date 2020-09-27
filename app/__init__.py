@@ -12,13 +12,29 @@ login_manager = LoginManager()
 login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
 
-db = SQLAlchemy()
-  
+#<<added this lines
+app = Flask(__name__ )
+
+
+#database url from https://data.heroku.com/datastores/b7ccc52e-18b9-4072-b498-5d0de81e7a5f#administration setting 
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://dpinhyejcurryu:b5a93b86d0144606e7ed0bb646ea370638c540c016ee841545822ad51f10cc0b@ec2-54-158-122-162.compute-1.amazonaws.com:5432/d5ptlprq1btrh9"
+
+app.config['SECRET_KEY'] = "KJBJBJHBjksdooqpsdtywdncnmzloTUHUIHKNKBJVJ" # secret key combinations
+app.config['MAIL_USERNAME'] = 'maryko3ch6@gmail.com' # email to be used to send mails
+app.config['MAIL_PASSWORD'] = 'b4ckd00r3d!@' # password of the email
+#end>>
+
+
+#<<modified this
+db = SQLAlchemy(app)
+  #end>>
+
 photos = UploadSet('photos', IMAGES)
 mail = Mail()
 # Initializing application
 def create_app(config_name):
-    app = Flask(__name__ )
+    ## commented this line
+    #app = Flask(__name__ )
     
     
     #Initializing extensions
@@ -47,7 +63,6 @@ def create_app(config_name):
     
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint, url_prefix = '/authenticate')
-    
     
     
     
