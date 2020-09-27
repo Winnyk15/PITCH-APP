@@ -20,8 +20,8 @@ app = Flask(__name__ )
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://dpinhyejcurryu:b5a93b86d0144606e7ed0bb646ea370638c540c016ee841545822ad51f10cc0b@ec2-54-158-122-162.compute-1.amazonaws.com:5432/d5ptlprq1btrh9"
 
 app.config['SECRET_KEY'] = "KJBJBJHBjksdooqpsdtywdncnmzloTUHUIHKNKBJVJ" # secret key combinations
-app.config['MAIL_USERNAME'] = 'maryko3ch6@gmail.com' # email to be used to send mails
-app.config['MAIL_PASSWORD'] = 'b4ckd00r3d!@' # password of the email
+app.config['MAIL_USERNAME'] = 'kahendahwinnie@gmail.com' # email to be used to send mails
+app.config['MAIL_PASSWORD'] = 'Oyollo2030' # password of the email
 #end>>
 
 
